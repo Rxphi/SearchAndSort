@@ -261,6 +261,14 @@ public class SearchAndSort {
 		mergeSort(A, m+1, n-1);
 		merge(A, 0, m, n-1);
 	}
+	
+	public static void straightMergeSort(int[] A) {
+		
+	}
+	
+	public static void naturalMergeSort(int[] A) {
+		
+	}
 
 	// QUICK SORT O(nlog(n))
 	public static void quickSort(int[] A) {
