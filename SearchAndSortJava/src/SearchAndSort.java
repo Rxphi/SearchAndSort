@@ -272,7 +272,40 @@ public class SearchAndSort {
 
 	// QUICK SORT O(nlog(n))
 	public static void quickSort(int[] A) {
+		quickSort(A, 0, A.length-1);
+	}
+	
+	public static void quickSort(int[] A, int l, int r) {
+		if (l < r) {
+			int pivotIndex = partition(A, l, r);
+			quickSort(A, l, pivotIndex - 1);
+			quickSort(A, pivotIndex + 1, r);
+		}
+	}
+	
+	public static int partition(int[] A, int l, int r) {
+		int i = l;
+		int j = r;
+		int pivot = A[r];
 		
+		while (i < j) {
+			while (i < j && A[i] <= pivot) {
+				i++;
+			}
+			while (j > i && A[j] > pivot) {
+				j--;
+			}
+			if (A[i] > A[j]) {
+				swap(i, j, A);
+			}
+		}
+		
+		if (A[i] > pivot) {
+			swap(i, r, A);
+		} else {
+			i = r;
+		}
+		return i;
 	}
 }
 
